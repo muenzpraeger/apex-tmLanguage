@@ -410,17 +410,22 @@ repository:
     - include: '#comment'
 
   extends-class:
-    begin: (extends)\b\s+([_[:alpha:]][_[:alnum:]]*)
+    begin: (extends)\b\s+(([_[:alpha:]][_[:alnum:]]*)(\.))?([_[:alpha:]][_[:alnum:]]*)
     beginCaptures:
       '1': { name: keyword.other.extends.apex }
-      '2': { name: entity.name.type.extends.apex }
+      '3': { name: entity.name.tag.namespace.apex }
+      '4': { name: punctuation-accessor.apex }
+      '5': { name: entity.name.type.extends.apex }
     end: '(?={|implements)'
 
   implements-class:
-    begin: (implements)\b\s+([_[:alpha:]][_[:alnum:]]*)
+    begin: |-
+      (implements)\b\s+(([_[:alpha:]][_[:alnum:]]*)(\.))?([_[:alpha:]][_[:alnum:]]*)
     beginCaptures:
       '1': { name: keyword.other.implements.apex }
-      '2': { name: entity.name.type.implements.apex }
+      '3': { name: entity.name.tag.namespace.apex }
+      '4': { name: punctuation-accessor.apex }
+      '5': { name: entity.name.type.implements.apex }
     end: '(?={|extends)'
 
   soql-query-expression:

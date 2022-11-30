@@ -1328,7 +1328,7 @@
       <key>extends-class</key>
       <dict>
         <key>begin</key>
-        <string>(extends)\b\s+([_[:alpha:]][_[:alnum:]]*)</string>
+        <string>(extends)\b\s+(([_[:alpha:]][_[:alnum:]]*)(\.))?([_[:alpha:]][_[:alnum:]]*)</string>
         <key>beginCaptures</key>
         <dict>
           <key>1</key>
@@ -1336,7 +1336,17 @@
             <key>name</key>
             <string>keyword.other.extends.apex</string>
           </dict>
-          <key>2</key>
+          <key>3</key>
+          <dict>
+            <key>name</key>
+            <string>entity.name.tag.namespace.apex</string>
+          </dict>
+          <key>4</key>
+          <dict>
+            <key>name</key>
+            <string>punctuation-accessor.apex</string>
+          </dict>
+          <key>5</key>
           <dict>
             <key>name</key>
             <string>entity.name.type.extends.apex</string>
@@ -1348,7 +1358,7 @@
       <key>implements-class</key>
       <dict>
         <key>begin</key>
-        <string>(implements)\b\s+([_[:alpha:]][_[:alnum:]]*)</string>
+        <string>(implements)\b\s+(([_[:alpha:]][_[:alnum:]]*)(\.))?([_[:alpha:]][_[:alnum:]]*)</string>
         <key>beginCaptures</key>
         <dict>
           <key>1</key>
@@ -1356,7 +1366,17 @@
             <key>name</key>
             <string>keyword.other.implements.apex</string>
           </dict>
-          <key>2</key>
+          <key>3</key>
+          <dict>
+            <key>name</key>
+            <string>entity.name.tag.namespace.apex</string>
+          </dict>
+          <key>4</key>
+          <dict>
+            <key>name</key>
+            <string>punctuation-accessor.apex</string>
+          </dict>
+          <key>5</key>
           <dict>
             <key>name</key>
             <string>entity.name.type.implements.apex</string>
